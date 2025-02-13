@@ -1,12 +1,10 @@
 import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import { io, Socket } from 'socket.io-client';
+import { io } from 'socket.io-client';
 
 
 // Connect to the socket server
-const socketClient = io(`http://localhost:${import.meta.env.VITE_PORT || 3000}`);
+const socketClient = io(import.meta.env.VITE_SERVERURL || 'http://localhost:3000');
 
 function App() {
   const [messages, setMessages] = useState<string[]>([]);
